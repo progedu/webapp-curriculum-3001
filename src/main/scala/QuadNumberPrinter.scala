@@ -1,0 +1,3 @@
+object QuadNumberPrinter extends App {
+
+}

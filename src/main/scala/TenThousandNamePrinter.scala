@@ -1,0 +1,3 @@
+object TenThousandNamePrinter extends App {
+
+}
