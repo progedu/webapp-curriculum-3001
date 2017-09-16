@@ -1,8 +1,13 @@
 object TwoThreads extends App {
   var now: Long = 0L
 
-  val threadA = new Thread(() => ??? )
-  val threadB = new Thread(() => ??? )
+  val threadA = new Thread(() => synchronized {
+    Thread.sleep(1000)
+    now = System.currentTimeMillis()
+  })
+  val threadB = new Thread(() => synchronized {
+    println(now)
+  })
 
   threadA.start()
   threadB.start()
