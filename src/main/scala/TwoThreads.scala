@@ -6,6 +6,9 @@ object TwoThreads extends App {
     now = System.currentTimeMillis()
   })
   val threadB = new Thread(() => synchronized {
+    while (now == 0L) {
+      Thread.sleep(1000)
+    }
     println(now)
   })
 
